@@ -13,7 +13,7 @@ local insert, concat = table.insert, table.concat
 local sleep = timer.sleep
 local running = coroutine.running
 
-local BASE_URL = "https://discord.com/api/v7"
+local BASE_URL = "https://discord.com/api/v10"
 
 local JSON = 'application/json'
 local PRECISION = 'millisecond'
@@ -240,7 +240,11 @@ function API:commit(method, url, req, payload, retries)
 end
 
 -- start of auto-generated methods --
-
+function API:createGlobalCommand(app_id,  payload)
+	local endpoint = f(endpoints.GLOBAL_COMMAND, app_id)
+	--payload = encode(payload)
+	return self:request("POST", endpoint, payload)
+end
 function API:getGuildAuditLog(guild_id, query)
 	local endpoint = f(endpoints.GUILD_AUDIT_LOGS, guild_id)
 	return self:request("GET", endpoint, nil, query)

@@ -308,6 +308,9 @@ function Client:_modify(payload)
 	end
 end
 
+function Client:createGlobalCommand(app_id, payload)
+	self._api:createGlobalCommand(app_id, payload)
+end
 --[=[
 @m setUsername
 @t http
