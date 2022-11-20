@@ -311,6 +311,9 @@ end
 function Client:createGlobalCommand(app_id, payload)
 	self._api:createGlobalCommand(app_id, payload)
 end
+function Client:getGlobalCommands(app_id)
+	return self._api:getGlobalCommands(app_id)
+end
 --[=[
 @m setUsername
 @t http

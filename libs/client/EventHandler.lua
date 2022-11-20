@@ -102,6 +102,9 @@ function EventHandler.RESUMED(_, client, shard)
 	return client:emit('shardResumed', shard._id)
 end
 
+function EventHandler.INTERACTION_CREATE(d, client, shard)
+	print(d.id)
+end
 function EventHandler.GUILD_MEMBERS_CHUNK(d, client, shard)
 	local guild = client._guilds:get(d.guild_id)
 	if not guild then return warning(client, 'Guild', d.guild_id, 'GUILD_MEMBERS_CHUNK') end

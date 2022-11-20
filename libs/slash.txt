@@ -1,0 +1,10 @@
+Added COMMAND_GLOBAL and COMMAND_GUILD to endpoints.lua
+
+Added methods to API.lua:
+    -createGlobalCommand
+    -createGuildCommand
+    -getGlobalCommand
+
+Added Interaction container (Interaction.lua)
+Added INTERACTION_CREATE function to EventHandler.lua
+Added interactionType to enums.lua

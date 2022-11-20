@@ -211,4 +211,11 @@ enums.logLevel = enum {
 	debug   = 4,
 }
 
+enums.interactionType = {
+	ping = 1,
+	applicationCommand = 2,
+	messageComponent = 3,
+	applicationCommandAutocomplete = 4,
+	modalSubmit = 5
+}
 return enums

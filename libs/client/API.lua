@@ -241,10 +241,23 @@ end
 
 -- start of auto-generated methods --
 function API:createGlobalCommand(app_id,  payload)
-	local endpoint = f(endpoints.GLOBAL_COMMAND, app_id)
+	local endpoint = f(endpoints.COMMAND_GLOBAL, app_id)
 	--payload = encode(payload)
 	return self:request("POST", endpoint, payload)
 end
+
+function API:getGlobalCommands(app_id, cmd_id)
+	local endpoint = f(endpoints.COMMAND_GLOBAL, app_id)
+	--payload = encode(payload)
+	return self:request("GET", endpoint)
+end
+
+function API:createGuildCommand(app_id, guild_id, payload)
+	local endpoint = f(endpoints.COMMAND_GLOBAL, app_id)
+	--payload = encode(payload)
+	return self:request("POST", endpoint, payload)
+end
+
 function API:getGuildAuditLog(guild_id, query)
 	local endpoint = f(endpoints.GUILD_AUDIT_LOGS, guild_id)
 	return self:request("GET", endpoint, nil, query)
